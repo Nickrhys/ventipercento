@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :countries do
+  resources :countries, only: [:index, :new, :create] do
 
   end
 

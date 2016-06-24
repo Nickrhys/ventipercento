@@ -4,3 +4,10 @@
 
   <%= f.submit %>
 <% end %>
+
+
+<ul id="countries">
+  <%render @countries %>
+</ul>
+
+<%= link_to "View all countries", countries_path %>

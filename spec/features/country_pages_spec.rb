@@ -10,13 +10,20 @@ describe "Countries" do
 
     it "displays countries" do
       visit countries_path
-      expect(page).to have_content("Great Britain")
+      expect(page).to have_content(country.name)
     end
   end
 
   describe "new" do
 
-    it "adds entries" do
+    it "creates entries", js: true do
+      visit new_country_path
+      fill_in "country[name]", with: "Great Britain"
+      click_on "Create Country"
+      expect(page).to have_content("Great Britain")
+    end
+
+    it "saves entries" do
       visit new_country_path
       fill_in "country[name]", with: "Great Britain"
       click_on "Create Country"
