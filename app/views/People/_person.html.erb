@@ -1,1 +1,5 @@
-<li><%= person.name %></li>
+<li id="name-<%=person.id%>">
+  <%= person.name %>
+  <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class =>
+      'delete_person' %>
+</li>

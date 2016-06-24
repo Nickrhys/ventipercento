@@ -23,6 +23,16 @@ class PeopleController < ApplicationController
     end
   end
 
+  def destroy
+    @person = Person.find(params[:id])
+    @person.destroy
+
+    respond_to do |format|
+      format.html { redirect_to new_person_path }
+      format.json { head :no_content }
+      format.js   { render :layout => false }
+    end
+  end
 
   protected
 
