@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   end
 
+  resources :countries do
+
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
